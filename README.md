@@ -51,7 +51,7 @@ Here are some ideas to get you started:
 
 :zzz: Enough about me lets dive into this repository to gather some understanding . 
 
-This is a  work in progress  Spring Secuirty  architecture that could be followed to learn SpringBoot Security for Rest Api's at one place .
+This is a  work in progress  Spring Security  architecture that could be followed to learn SpringBoot Security for Rest Api's at one place .
 There is ongoing work to add  a lot of other capabilities and modules needed to create a real world application like system.
 
 
@@ -79,5 +79,26 @@ Core Concepts you would learn from here are listed below
 5. JWT  validation (Integrity & Expiry) - By Oauth(JwtEncoder , JwtDecoder)
 
 This application would start on  port 8087
+# Get token
+- Hit authenticate resource as a post 
+- select basic auth as the authentication type
+- enter your configured username & password in BasicAuthSecurityConfiguration.java
+- hit send and you should see a token generated in response
 use below curl to get your token 
+```json
+curl --location --request POST 'http://localhost:8087/authenticate' \
+--header 'Authorization: Basic YW1pdDphbWl0'
+```
+once token is received then you can use hit the /todos resource to get all the configured todos 
+
+get--> http://localhost:8087/todos
+with auth as  beater token 
+
+To get a specific todo for user hit
+http://localhost:8087/users/{username}/todos
+
+- 📫 if you run into  any issue then please reach to me on [Linkedin](https://www.linkedin.com/in/amitkumarusa/) or you can email me at amit.kumar.
+  usa35@gmail.com
+
+
 
